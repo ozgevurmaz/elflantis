@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  /* Lavender — ana marka rengi */
+  --color-lavender-50: #f6f4fb;
+  --color-lavender-100: #ece6f6;
+  --color-lavender-200: #d9cfec;
+  --color-lavender-300: #c1b1e0;
+  --color-lavender-500: #9683c9;
+  --color-lavender-600: #8570b8;
+  --color-lavender-700: #6d5a99;
+
+  /* Sage — ikincil vurgu rengi */
+  --color-sage-50: #f4f7f2;
+  --color-sage-100: #e4ebe0;
+  --color-sage-300: #b7c8ae;
+  --color-sage-500: #7e9673;
+  --color-sage-600: #6a7f60;
+
+  /* Warm White — zemin */
+  --color-warm-white: #fbf8f4;
+
+  /* Ink — metin */
+  --color-ink-400: #9a948c;
+  --color-ink-500: #7c766e;
+  --color-ink-600: #635d56;
+  --color-ink-700: #4d4740;
+  --color-ink-800: #37322c;
+  --color-ink-900: #2a2622;
+
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-warm-white);
+    color: var(--color-ink-800);
+    font-family: var(--font-body);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-lavender-500);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

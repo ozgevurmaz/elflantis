@@ -10,6 +10,7 @@ export const SITE_CONFIG = {
 } as const;
 
 export const NAV_CONFIG = {
+  logo: "/logomor.png",
   brandName: "Elflantis",
 } as const;
 
@@ -20,6 +21,7 @@ export const HERO_CONTENT = {
     "Her gün gelen kısa bir e-posta ile bedenini daha yakından tanımaya, sinir sistemini anlamaya ve günlük hayatında uygulayabileceğin küçük somatik deneyimler keşfetmeye davetlisin.",
   formHint: "Spam yok. İstediğin zaman abonelikten çıkabilirsin.",
   photoAlt: "Elif Özge'nin profil fotoğrafı",
+  photoSrc: "/me.png",
 } as const;
 
 export const JOURNEY_CONTENT = {
@@ -32,7 +34,7 @@ export const JOURNEY_CARDS: JourneyCard[] = [
   {
     id: "fark-etmek",
     icon: Brain,
-    title: "Fark etmek",
+    title: "Fark et",
     description: "Bedeninin verdiği sinyalleri fark etmeye başlayacaksın.",
   },
   {
@@ -45,7 +47,7 @@ export const JOURNEY_CARDS: JourneyCard[] = [
   {
     id: "alan-acmak",
     icon: Sparkles,
-    title: "Alan açmak",
+    title: "Alan aç",
     description:
       "Duygularını değiştirmeye çalışmadan onlara alan açmayı keşfedeceksin.",
   },
@@ -78,6 +80,7 @@ export const ABOUT_CONTENT = {
   description:
     "Instagram'da sinir sistemi regülasyonu ve somatik çalışmalar üzerine içerikler üretiyorum. Amacım insanlara bedenlerini değiştirmeyi değil, önce anlamayı öğretmek.",
   photoAlt: "Elif Özge'nin profil fotoğrafı",
+  photoSrc: "/me.png",
 } as const;
 
 export const CTA_CONTENT = {

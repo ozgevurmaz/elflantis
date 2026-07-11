@@ -15,7 +15,7 @@ export function AboutSection() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center"
       >
-        <ProfilePhoto alt={ABOUT_CONTENT.photoAlt} size="large" />
+        <ProfilePhoto alt={ABOUT_CONTENT.photoAlt} size="large" src={ABOUT_CONTENT.photoSrc} />
         <h2 className="font-display text-2xl tracking-tight text-ink-900 sm:text-3xl">
           {ABOUT_CONTENT.title}
         </h2>

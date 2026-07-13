@@ -120,4 +120,5 @@ export const EMAIL_FORM_CONTENT = {
   successTitle: "Katıldın!",
   successMessage: "İlk e-postanı yakında alacaksın.",
   errorMessage: "Geçerli bir e-posta adresi gir.",
+  serverErrorMessage: "Bir şeyler ters gitti, lütfen tekrar dene.",
 } as const;

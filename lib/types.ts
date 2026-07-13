@@ -24,3 +24,28 @@ export interface SocialLink {
 
 /** E-posta kayıt formunun gönderim sonucu. */
 export type EmailSignupStatus = "idle" | "submitting" | "success" | "error";
+
+/** POST /api/newsletter request body. */
+export interface NewsletterSignupPayload {
+  email: string;
+  source?: string;
+}
+
+/** POST /api/newsletter response body. */
+export interface NewsletterSignupResponse {
+  success: boolean;
+  error?: string;
+}
+
+/** POST /api/contact request body. */
+export interface ContactFormPayload {
+  name: string;
+  email: string;
+  message: string;
+}
+
+/** POST /api/contact response body. */
+export interface ContactFormResponse {
+  success: boolean;
+  error?: string;
+}

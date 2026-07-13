@@ -7,9 +7,8 @@ import { CheckCircle2, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { EMAIL_FORM_CONTENT } from "@/lib/constants";
-import type { EmailSignupStatus } from "@/lib/types";
-
-const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+import type { EmailSignupStatus, NewsletterSignupResponse } from "@/lib/types";
+import { isValidEmail } from "@/lib/utils";
 
 interface EmailSignupFormProps {
   /** Aynı sayfada birden fazla form olduğu için benzersiz id/aria bağlantısı sağlar. */
@@ -17,13 +16,10 @@ interface EmailSignupFormProps {
   className?: string;
 }
 
-/**
- * TODO: handleSubmit içindeki mock gecikmeyi gerçek kayıt API'nize
- * (ör. /api/subscribe) yapılan bir fetch çağrısıyla değiştirin.
- */
 export function EmailSignupForm({ formId, className }: EmailSignupFormProps) {
   const [email, setEmail] = React.useState("");
   const [status, setStatus] = React.useState<EmailSignupStatus>("idle");
+  const [errorMessage, setErrorMessage] = React.useState<string>(EMAIL_FORM_CONTENT.errorMessage);
   const prefersReducedMotion = useReducedMotion();
 
   const inputId = `${formId}-email`;
@@ -32,17 +28,31 @@ export function EmailSignupForm({ formId, className }: EmailSignupFormProps) {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    if (!EMAIL_PATTERN.test(email)) {
+    if (!isValidEmail(email)) {
+      setErrorMessage(EMAIL_FORM_CONTENT.errorMessage);
       setStatus("error");
       return;
     }
 
     setStatus("submitting");
 
-    // Mock kayıt isteği — gerçek entegrasyonda burası bir API çağrısı olacak.
-    await new Promise((resolve) => setTimeout(resolve, 900));
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, source: formId }),
+      });
+      const data = (await response.json()) as NewsletterSignupResponse;
 
-    setStatus("success");
+      if (!response.ok || !data.success) {
+        throw new Error(data.error ?? "server_error");
+      }
+
+      setStatus("success");
+    } catch {
+      setErrorMessage(EMAIL_FORM_CONTENT.serverErrorMessage);
+      setStatus("error");
+    }
   }
 
   if (status === "success") {
@@ -114,7 +124,7 @@ export function EmailSignupForm({ formId, className }: EmailSignupFormProps) {
             transition={{ duration: 0.2 }}
             className="mt-2 text-sm text-red-600"
           >
-            {EMAIL_FORM_CONTENT.errorMessage}
+            {errorMessage}
           </motion.p>
         )}
       </AnimatePresence>

@@ -16,12 +16,11 @@ export const NAV_CONFIG = {
 
 export const HERO_CONTENT = {
   eyebrow: "7 Günlük Ücretsiz Deneyim",
-  title: "Sinir Sisteminle Tanış",
+  title: "Önce bedenini dinlemeyi öğren.",
   description:
-    "Her gün gelen kısa bir e-posta ile bedenini daha yakından tanımaya, sinir sistemini anlamaya ve günlük hayatında uygulayabileceğin küçük somatik deneyimler keşfetmeye davetlisin.",
-  formHint: "Spam yok. İstediğin zaman abonelikten çıkabilirsin.",
+    "Somatik egzersizler ve sinir sistemi temelli çalışmalarla bedeninle yeniden bağ kur çünkü bedenin güvende hissettiğinde, dönüşüm başlar.",
   photoAlt: "Elif Özge'nin profil fotoğrafı",
-  photoSrc: "/me.png",
+
 } as const;
 
 export const JOURNEY_CONTENT = {
@@ -78,15 +77,13 @@ export const AUDIENCE_ITEMS: AudienceItem[] = [
 export const ABOUT_CONTENT = {
   title: "Merhaba, ben Elif Özge.",
   description:
-    "Instagram'da sinir sistemi regülasyonu ve somatik çalışmalar üzerine içerikler üretiyorum. Amacım insanlara bedenlerini değiştirmeyi değil, önce anlamayı öğretmek.",
+    "İnsanların kendileriyle savaşmadan dönüşebileceklerine inanıyorum. Çünkü gerçek değişim, daha çok çabalamakla değil; bedenini, sinir sistemini ve eski kalıplarını anlamakla başlar. Amacım, insanların kendi otantik benlikleriyle yeniden hizalanmalarına ve bunu güven hissiyle sürdürebilmelerine rehberlik etmek.",
   photoAlt: "Elif Özge'nin profil fotoğrafı",
-  photoSrc: "/me.png",
 } as const;
 
 export const CTA_CONTENT = {
   title: "Hazırsan başlayalım.",
   description: "İlk e-postanı hemen göndereceğim.",
-  formHint: "Spam yok. İstediğin zaman abonelikten çıkabilirsin.",
 } as const;
 
 export const SOCIAL_LINKS: SocialLink[] = [

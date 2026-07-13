@@ -22,7 +22,6 @@ export function CTASection() {
 
         <div className="mt-8 w-full max-w-sm">
           <EmailSignupForm formId="cta" />
-          <p className="mt-3 text-sm text-white/50">{CTA_CONTENT.formHint}</p>
         </div>
       </motion.div>
     </section>

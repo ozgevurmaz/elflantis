@@ -14,21 +14,8 @@ const FADE_UP = {
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden px-6 pb-20 pt-10 sm:pt-14 lg:px-8">
-      <div className="mx-auto max-w-6xl">
-        <div className="flex felx-col items-center justify-start gap-2">
-          <Image
-            src={NAV_CONFIG.logo}
-            alt={NAV_CONFIG.brandName}
-            width={24}
-            height={24}
-            className="h-auto w-auto"
-          />
-          <span className="text-[15px] font-semibold tracking-tight text-ink-900">
-            {NAV_CONFIG.brandName}
-          </span>
-        </div>
-
+    <section >
+              
         <div className="mt-16 grid items-center gap-16 lg:mt-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
           <motion.div
             initial="hidden"
@@ -50,7 +37,6 @@ export function HeroSection() {
 
             <div className="mt-9 max-w-md">
               <EmailSignupForm formId="hero" />
-              <p className="mt-3 text-sm text-ink-500">{HERO_CONTENT.formHint}</p>
             </div>
           </motion.div>
 
@@ -60,10 +46,10 @@ export function HeroSection() {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
             className="flex justify-center lg:justify-end"
           >
-            <ProfilePhoto alt={HERO_CONTENT.photoAlt} src={HERO_CONTENT.photoSrc} />
+            <ProfilePhoto alt={HERO_CONTENT.photoAlt} />
           </motion.div>
         </div>
-      </div>
+      
     </section>
   );
 }

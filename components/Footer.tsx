@@ -23,7 +23,7 @@ export function Footer() {
                 aria-label={link.label}
                 className="flex h-10 w-10 items-center justify-center rounded-full text-ink-600 transition-colors duration-200 hover:bg-ink-900/5 hover:text-ink-900"
               >
-                <Icon className="h-[18px] w-[18px]" strokeWidth={1.75} aria-hidden="true" />
+                <Icon className="h-4.5 w-4.5" strokeWidth={1.75} aria-hidden="true" />
               </a>
             );
           })}

@@ -7,19 +7,13 @@ import { cn } from "@/lib/utils";
 
 interface ProfilePhotoProps {
   alt: string;
-  /** Görsel eklendiğinde bu prop'a gerçek <img> src'i verin; boşsa placeholder gösterilir. */
   src?: string;
   size?: "default" | "large";
   className?: string;
 }
 
-/**
- * Gerçek fotoğraf gelene kadar kullanılan placeholder.
- * Arkasındaki iki halka, sayfanın tek imza animasyonu olan "nefes" hareketini taşır:
- * yavaşça genişleyip daralarak nefes alıp vermeyi çağrıştırır.
- * `src` verildiğinde placeholder ikonu yerine gerçek <img> render edilir.
- */
-export function ProfilePhoto({ alt, src, size = "default", className }: ProfilePhotoProps) {
+
+export function ProfilePhoto({ alt, src = "/me.webp", size = "default", className }: ProfilePhotoProps) {
   const prefersReducedMotion = useReducedMotion();
 
   const dimensions = size === "large" ? "h-40 w-40" : "h-72 w-72 sm:h-80 sm:w-80";

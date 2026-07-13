@@ -12,7 +12,7 @@ const FADE_UP = {
 export function JourneySection() {
   return (
     <section className="px-6 py-20 lg:px-8 lg:py-28">
-      <div className="mx-auto max-w-6xl">
+   
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -40,7 +40,7 @@ export function JourneySection() {
                 viewport={{ once: true, margin: "-80px" }}
                 variants={FADE_UP}
                 transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
-                className="group rounded-2xl border border-ink-900/[0.06] bg-white p-7 transition-shadow duration-200 hover:shadow-md hover:shadow-ink-900/[0.04]"
+                className="group rounded-2xl border border-ink-900/6 bg-white p-7 transition-shadow duration-200 hover:shadow-md hover:shadow-ink-900/[0.04]"
               >
                 <div className="flex h-11 w-11 items-center justify-center rounded-full bg-sage-100">
                   <Icon className="h-5 w-5 text-sage-600" strokeWidth={1.75} aria-hidden="true" />
@@ -53,7 +53,7 @@ export function JourneySection() {
             );
           })}
         </div>
-      </div>
+    
     </section>
   );
 }

@@ -3,6 +3,7 @@ import { Fraunces, Inter } from "next/font/google";
 
 import { SITE_CONFIG } from "@/lib/constants";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -48,7 +49,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr" className={`${fraunces.variable} ${inter.variable}`}>
-      <body className="bg-warm-white font-body text-ink-800 antialiased">{children}</body>
+      <body className="bg-warm-white font-body text-ink-800 antialiased">
+        <div className="relative overflow-hidden px-6 pb-20 pt-10 sm:pt-14 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <Navbar />
+            {children}
+          </div>
+        </div>
+      </body>
     </html>
   );
 }

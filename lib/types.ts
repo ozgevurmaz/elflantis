@@ -22,6 +22,14 @@ export interface SocialLink {
   icon: LucideIcon;
 }
 
+/** /on-gorusme sayfasındaki "Peki bunu nasıl yapıyoruz?" bölümünde tek bir adım. */
+export interface ProcessStep {
+  id: string;
+  number: string;
+  title: string;
+  description: string;
+}
+
 /** E-posta kayıt formunun gönderim sonucu. */
 export type EmailSignupStatus = "idle" | "submitting" | "success" | "error";
 

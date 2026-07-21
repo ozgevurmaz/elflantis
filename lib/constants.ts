@@ -268,6 +268,81 @@ export const FIT_NO_ITEMS: AudienceItem[] = [
   },
 ];
 
+/* ---------------------------------------------------------------------- */
+/* /yedi-gunluk — anasayfanın farklı değerlendirilecek kopyası             */
+/* ---------------------------------------------------------------------- */
+
+export const YEDI_GUNLUK_HERO_CONTENT = {
+  eyebrow: "7 Günlük Ücretsiz Deneyim",
+  title: "Önce bedenini dinlemeyi öğren.",
+  description:
+    "Somatik egzersizler ve sinir sistemi temelli çalışmalarla bedeninle yeniden bağ kur çünkü bedenin güvende hissettiğinde, dönüşüm başlar.",
+  photoAlt: "Elif Özge'nin profil fotoğrafı",
+} as const;
+
+export const YEDI_GUNLUK_JOURNEY_CONTENT = {
+  title: "Bu 7 günde neler yaşayacaksın?",
+  description:
+    "Her e-posta kısa, sade ve uygulanabilir. Teoriyle değil, bedeninle ilerliyorsun.",
+} as const;
+
+export const YEDI_GUNLUK_JOURNEY_CARDS: JourneyCard[] = [
+  {
+    id: "fark-etmek",
+    icon: Brain,
+    title: "Fark et",
+    description: "Bedeninin verdiği sinyalleri fark etmeye başlayacaksın.",
+  },
+  {
+    id: "kucuk-pratikler",
+    icon: Leaf,
+    title: "Küçük pratikler",
+    description:
+      "Günlük hayatına kolayca ekleyebileceğin küçük somatik pratikler deneyimleyeceksin.",
+  },
+  {
+    id: "alan-acmak",
+    icon: Sparkles,
+    title: "Alan aç",
+    description:
+      "Duygularını değiştirmeye çalışmadan onlara alan açmayı keşfedeceksin.",
+  },
+  {
+    id: "yeni-bir-iliski",
+    icon: Brain,
+    title: "Yeni bir ilişki",
+    description:
+      "Sinir sistemini daha yakından tanırken bedeninle yeni bir ilişki kurmaya başlayacaksın.",
+  },
+];
+
+export const YEDI_GUNLUK_WHO_IS_IT_FOR_CONTENT = {
+  title: "Kimler için?",
+  description: "Bu deneyim, özellikle şunlar için sade bir başlangıç noktası.",
+} as const;
+
+export const YEDI_GUNLUK_AUDIENCE_ITEMS: AudienceItem[] = [
+  { id: "zihni-calisanlar", text: "Sürekli zihni çalışanlar" },
+  { id: "gergin-hissedenler", text: "Kendini sık sık gergin hissedenler" },
+  { id: "bedenini-anlamak", text: "Bedenini daha iyi anlamak isteyenler" },
+  {
+    id: "sade-giris",
+    text: "Sinir sistemi regülasyonuna sade bir giriş yapmak isteyenler",
+  },
+];
+
+export const YEDI_GUNLUK_ABOUT_CONTENT = {
+  title: "Merhaba, ben Elif Özge.",
+  description:
+    "İnsanların kendileriyle savaşmadan dönüşebileceklerine inanıyorum. Çünkü gerçek değişim, daha çok çabalamakla değil; bedenini, sinir sistemini ve eski kalıplarını anlamakla başlar. Amacım, insanların kendi otantik benlikleriyle yeniden hizalanmalarına ve bunu güven hissiyle sürdürebilmelerine rehberlik etmek.",
+  photoAlt: "Elif Özge'nin profil fotoğrafı",
+} as const;
+
+export const YEDI_GUNLUK_CTA_CONTENT = {
+  title: "Hazırsan başlayalım.",
+  description: "İlk e-postanı hemen göndereceğim.",
+} as const;
+
 export const EXPECTATION_SECTION_CONTENT = {
   title: "Ön görüşmede seni ne bekliyor?",
   paragraphs: [

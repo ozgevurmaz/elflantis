@@ -57,3 +57,16 @@ export interface ContactFormResponse {
   success: boolean;
   error?: string;
 }
+
+/** POST /api/guide request body — /5-isaret-rehberi sayfasındaki rehber talebi. */
+export interface GuideSignupPayload {
+  name?: string;
+  email: string;
+  consent: boolean;
+}
+
+/** POST /api/guide response body. */
+export interface GuideSignupResponse {
+  success: boolean;
+  error?: string;
+}

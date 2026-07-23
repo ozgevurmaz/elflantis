@@ -10,7 +10,7 @@ import type { GuideSignupPayload, GuideSignupResponse } from "@/lib/types";
 import { isValidEmail } from "@/lib/utils";
 
 const GUIDE_SOURCE = "5-isaret-rehberi";
-const GUIDE_PDF_PATH = path.join(process.cwd(), "public", "rehberler", "5-isaret-rehberi.pdf");
+const GUIDE_PDF_PATH = path.join(process.cwd(), "assets", "5-isaret-rehberi.pdf");
 
 export async function POST(request: Request) {
   const body = (await request.json().catch(() => null)) as GuideSignupPayload | null;
@@ -44,7 +44,17 @@ export async function POST(request: Request) {
     );
   }
 
-  const pdfBuffer = await fs.readFile(GUIDE_PDF_PATH);
+  let pdfBuffer: Buffer;
+  try {
+    pdfBuffer = await fs.readFile(GUIDE_PDF_PATH);
+  } catch (error) {
+    console.error("guide pdf read failed", error);
+    return NextResponse.json<GuideSignupResponse>(
+      { success: false, error: "server_error" },
+      { status: 500 },
+    );
+  }
+
   const greeting = name ? `${GUIDE_EMAIL_CONTENT.greeting} ${name},` : GUIDE_EMAIL_CONTENT.greeting;
 
   const textBody = [

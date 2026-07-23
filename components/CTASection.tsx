@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
-import { EmailSignupForm } from "@/components/email-signup-form";
-import { CTA_CONTENT } from "@/lib/constants";
+import { buttonVariants } from "@/components/ui/button";
+import { HOME_FINAL_CTA_CONTENT } from "@/lib/constants";
 
 export function CTASection() {
   return (
@@ -16,12 +17,14 @@ export function CTASection() {
         className="mx-auto flex max-w-xl flex-col items-center rounded-3xl bg-ink-900 px-8 py-14 text-center sm:px-16"
       >
         <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
-          {CTA_CONTENT.title}
+          {HOME_FINAL_CTA_CONTENT.title}
         </h2>
-        <p className="mt-3 text-lg text-white/70">{CTA_CONTENT.description}</p>
+        <p className="mt-4 text-lg text-white/70">{HOME_FINAL_CTA_CONTENT.description}</p>
 
-        <div className="mt-8 w-full max-w-sm">
-          <EmailSignupForm formId="cta" />
+        <div className="mt-8">
+          <Link href={HOME_FINAL_CTA_CONTENT.href} className={buttonVariants({ variant: "primary" })}>
+            {HOME_FINAL_CTA_CONTENT.cta}
+          </Link>
         </div>
       </motion.div>
     </section>

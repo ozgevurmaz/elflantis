@@ -3,9 +3,9 @@ import type { AudienceItem, JourneyCard, ProcessStep, SocialLink } from "./types
 
 export const SITE_CONFIG = {
   name: "Elflantis",
-  title: "Elflantis — Sinir Sisteminle Tanış",
+  title: "Elflantis — Regülasyon Koçluğu",
   description:
-    "7 günlük ücretsiz e-posta deneyimiyle bedenini daha yakından tanı, sinir sistemini anla ve günlük hayatına küçük somatik pratikler ekle.",
+    "Beden güvende hissettiğinde, dönüşüm kendiliğinden başlar. Regülasyon Koçluğu, sinir sistemi temelli yaklaşımıyla seni sürekli mücadele etmekten çıkarıp huzura, özgürlüğe ve istediğin yaşama taşıyan bir dönüşüm yolculuğudur.",
   url: "https://elflantis.com",
 } as const;
 
@@ -22,76 +22,111 @@ export const TALLY_FORM_URL = "https://tally.so/r/ob1XQe";
 
 export const TALLY_FORM_ID = TALLY_FORM_URL.split("/").filter(Boolean).pop() ?? "";
 
-export const HERO_CONTENT = {
-  eyebrow: "7 Günlük Ücretsiz Deneyim",
-  title: "Önce bedenini dinlemeyi öğren.",
-  description:
-    "Somatik egzersizler ve sinir sistemi temelli çalışmalarla bedeninle yeniden bağ kur çünkü bedenin güvende hissettiğinde, dönüşüm başlar.",
-  photoAlt: "Elif Özge'nin profil fotoğrafı",
+/* ---------------------------------------------------------------------- */
+/* / — anasayfa: Regülasyon Koçluğu                                       */
+/* ---------------------------------------------------------------------- */
 
+export const HOME_HERO_CONTENT = {
+  title: "Beden güvende hissettiğinde, dönüşüm kendiliğinden başlar.",
+  paragraphs: [
+    "Hayatını değiştirmek için daha fazla zorlamana gerek yok. Gerçek değişim; sinir sistemin güveni hissettiğinde, bedenin hayatta kalma modundan çıkıp yaşam moduna geçtiğinde mümkün olur.",
+    "Regülasyon Koçluğu, sinir sistemi temelli yaklaşımıyla seni sürekli mücadele etmekten çıkarıp; huzura, özgürlüğe ve istediğin yaşama taşıyan bir dönüşüm yolculuğudur.",
+  ],
+  cta: "Dönüşüm Yolculuğuna Başla",
+  href: "/on-gorusme",
 } as const;
 
-export const JOURNEY_CONTENT = {
-  title: "Bu 7 günde neler yaşayacaksın?",
-  description:
-    "Her e-posta kısa, sade ve uygulanabilir. Teoriyle değil, bedeninle ilerliyorsun.",
+export const HOME_SHORT_DESCRIPTION_CONTENT = {
+  paragraphs: [
+    "Çoğu insan ne yapması gerektiğini bilir; ama yapamaz.",
+    "Sorun irade eksikliği değildir. Sorun, sinir sisteminin kendini güvende hissetmemesidir.",
+    "Regülasyon Koçluğu; zihni ikna etmeye çalışmak yerine bedenle çalışır. Çünkü kalıcı dönüşüm, önce bedenin güveni öğrenmesiyle başlar.",
+  ],
 } as const;
 
-export const JOURNEY_CARDS: JourneyCard[] = [
-  {
-    id: "fark-etmek",
-    icon: Brain,
-    title: "Fark et",
-    description: "Bedeninin verdiği sinyalleri fark etmeye başlayacaksın.",
-  },
-  {
-    id: "kucuk-pratikler",
-    icon: Leaf,
-    title: "Küçük pratikler",
-    description:
-      "Günlük hayatına kolayca ekleyebileceğin küçük somatik pratikler deneyimleyeceksin.",
-  },
-  {
-    id: "alan-acmak",
-    icon: Sparkles,
-    title: "Alan aç",
-    description:
-      "Duygularını değiştirmeye çalışmadan onlara alan açmayı keşfedeceksin.",
-  },
-  {
-    id: "yeni-bir-iliski",
-    icon: Brain,
-    title: "Yeni bir ilişki",
-    description:
-      "Sinir sistemini daha yakından tanırken bedeninle yeni bir ilişki kurmaya başlayacaksın.",
-  },
-];
-
-export const WHO_IS_IT_FOR_CONTENT = {
-  title: "Kimler için?",
-  description: "Bu deneyim, özellikle şunlar için sade bir başlangıç noktası.",
-} as const;
-
-export const AUDIENCE_ITEMS: AudienceItem[] = [
-  { id: "zihni-calisanlar", text: "Sürekli zihni çalışanlar" },
-  { id: "gergin-hissedenler", text: "Kendini sık sık gergin hissedenler" },
-  { id: "bedenini-anlamak", text: "Bedenini daha iyi anlamak isteyenler" },
-  {
-    id: "sade-giris",
-    text: "Sinir sistemi regülasyonuna sade bir giriş yapmak isteyenler",
-  },
-];
-
-export const ABOUT_CONTENT = {
-  title: "Merhaba, ben Elif Özge.",
-  description:
-    "İnsanların kendileriyle savaşmadan dönüşebileceklerine inanıyorum. Çünkü gerçek değişim, daha çok çabalamakla değil; bedenini, sinir sistemini ve eski kalıplarını anlamakla başlar. Amacım, insanların kendi otantik benlikleriyle yeniden hizalanmalarına ve bunu güven hissiyle sürdürebilmelerine rehberlik etmek.",
+export const HOME_ABOUT_CONTENT = {
+  title: "Ben Kimim?",
+  greeting: "Merhaba, ben Elif.",
+  paragraphs: [
+    "Elektrik-Elektronik Mühendisliği okurken insanın işleyişini anlamaya duyduğum merak beni bambaşka bir yolculuğa çıkardı.",
+    "2016 yılında yaşam koçluğu eğitimleriyle başlayan bu yolculuk; yoga eğitmenliği, nefes terapistliği, dönüşüm koçluğu ve insanın potansiyelini ortaya çıkaran birçok farklı disiplinle yıllar içinde derinleşti.",
+    "2018 yılından bu yana aktif olarak insanların yaşamlarında kalıcı dönüşümlere rehberlik ediyorum.",
+    "Yüzlerce danışanla çalışırken önemli bir şeyi fark ettim:",
+  ],
+  emphasis: "Bilgi tek başına yetmiyordu.",
+  closingParagraphs: [
+    "İnsanlar neyi değiştirmek istediklerini biliyorlardı. Fakat bedenleri hâlâ stres, tehdit ve hayatta kalma modunda olduğu için o değişimi sürdüremiyorlardı.",
+    "İşte bu farkındalık beni kendi yaklaşımımı oluşturmaya götürdü.",
+    "Bugün uyguladığım Regülasyon Koçluğu, sinir sistemi temelli dönüşüm yaklaşımıyla kişinin yalnızca hedeflerine ulaşmasını değil; kendini gerçekten güvende, özgür ve yaşamın içinde hissetmesini amaçlıyor.",
+  ],
+  final: "Çünkü benim için gerçek başarı; sadece hedeflere ulaşmak değil, o hayatı huzurla yaşayabilmektir.",
   photoAlt: "Elif Özge'nin profil fotoğrafı",
 } as const;
 
-export const CTA_CONTENT = {
-  title: "Hazırsan başlayalım.",
-  description: "İlk e-postanı hemen göndereceğim.",
+export const HOME_WHY_NERVOUS_SYSTEM_CONTENT = {
+  title: "Neden Sinir Sistemi Temelli Dönüşüm?",
+  lead: "Çünkü hayatını aslında düşüncelerin değil, sinir sistemin yönetir.",
+  conditionalLeadIn: "Eğer bedenin kendini tehdit altında hissediyorsa;",
+  closingParagraphs: ["Bu senin yetersiz olduğun anlamına gelmez.", "Sadece sinir sistemin seni korumaya çalışıyordur."],
+  closingEmphasis: "Güven oluştuğunda ise değişim zorlayıcı olmaktan çıkar; doğal hale gelir.",
+} as const;
+
+export const HOME_WHY_NERVOUS_SYSTEM_ITEMS: AudienceItem[] = [
+  { id: "erteleme", text: "Sürekli erteleyebilirsin." },
+  { id: "dongu", text: "Aynı döngülere tekrar tekrar girebilirsin." },
+  { id: "kaygi", text: "Kaygıyı bırakamazsın." },
+  { id: "iliski", text: "İlişkilerinde aynı sorunları yaşayabilirsin." },
+  { id: "eski-hal", text: "Ne kadar gelişsen de eski haline geri dönebilirsin." },
+];
+
+export const HOME_WHAT_IS_CONTENT = {
+  title: "Regülasyon Koçluğu Nedir?",
+  description:
+    "Regülasyon Koçluğu; sinir sistemi bilimini, koçluğu, nefes çalışmalarını, beden farkındalığını ve dönüşüm araçlarını bir araya getiren bütünsel bir yaklaşımdır.",
+  goalsIntro: "Bu çalışmada amaç yalnızca sorunları çözmek değildir. Amaç;",
+  closing: "Çünkü gerçek özgürlük, dış koşullar değiştiğinde değil; bedenin artık sürekli alarm vermediğinde başlar.",
+} as const;
+
+export const HOME_WHAT_IS_ITEMS: AudienceItem[] = [
+  { id: "guven-insa", text: "Bedende güven hissini yeniden inşa etmek," },
+  { id: "stres-donusum", text: "Stres döngülerini dönüştürmek," },
+  { id: "dayaniklilik", text: "Duygusal dayanıklılığı artırmak," },
+  { id: "oz-benlik", text: "Kişinin öz benliğiyle yeniden bağlantı kurmasını sağlamak," },
+  { id: "surdurulebilir-yasam", text: "Ve istediği yaşamı sürdürülebilir şekilde inşa edebilmesidir." },
+];
+
+export const HOME_WHO_IS_IT_FOR_CONTENT = {
+  title: "Bu Yolculuk Kimler İçin?",
+  description: "Regülasyon Koçluğu;",
+} as const;
+
+export const HOME_WHO_IS_IT_FOR_ITEMS: AudienceItem[] = [
+  { id: "kaygi-yasayan", text: "Sürekli kaygı yaşayan," },
+  { id: "dongu-sikisik", text: "Aynı döngülerin içinde sıkışmış hisseden," },
+  { id: "tukenmislik", text: "Tükenmişlik yaşayan," },
+  { id: "sabotaj", text: "Kendini sürekli sabote ettiğini düşünen," },
+  { id: "huzurlu-iliski", text: "Daha huzurlu ilişkiler kurmak isteyen," },
+  { id: "potansiyel", text: "Potansiyelini ortaya çıkarmak isteyen," },
+  { id: "yasama-ogrenme", text: "Başarmaktan çok yaşamayı öğrenmek isteyen herkes için tasarlanmıştır." },
+];
+
+export const HOME_MY_APPROACH_CONTENT = {
+  title: "Benim Yaklaşımım",
+  paragraphs: [
+    "Ben tek bir yönteme bağlı çalışmıyorum.",
+    "Mühendislikten gelen analitik bakış açımı; yıllar içinde edindiğim koçluk, yoga, nefes terapisi ve dönüşüm araçlarıyla birleştirerek kendime özgü bir sistem geliştirdim.",
+  ],
+  questionLeadIn: "Bu sistemin merkezinde tek bir soru var:",
+  question: "\"Beden şu anda gerçekten güvende hissediyor mu?\"",
+  closing: "Çünkü bu sorunun cevabı değiştiğinde; düşünceler, alışkanlıklar, ilişkiler ve yaşamın tamamı değişmeye başlıyor.",
+} as const;
+
+export const HOME_FINAL_CTA_CONTENT = {
+  title: "Gerçek dönüşüm daha çok çabalamakla değil, bedenine güveni yeniden öğretmekle başlar.",
+  description:
+    "Eğer sen de sürekli mücadele etmek yerine daha dengeli, özgür ve huzurlu bir yaşam inşa etmek istiyorsan, bu yolculukta sana rehberlik etmek için buradayım.",
+  cta: "Regülasyon Koçluğu Yolculuğuna Başla",
+  href: "/on-gorusme",
 } as const;
 
 export const SOCIAL_LINKS: SocialLink[] = [

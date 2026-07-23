@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
-import { AUDIENCE_ITEMS, WHO_IS_IT_FOR_CONTENT } from "@/lib/constants";
+import { HOME_WHO_IS_IT_FOR_CONTENT, HOME_WHO_IS_IT_FOR_ITEMS } from "@/lib/constants";
 
 const FADE_UP = {
   hidden: { opacity: 0, y: 16 },
@@ -23,15 +23,15 @@ export function WhoIsItForSection() {
           className="max-w-2xl"
         >
           <h2 className="font-display text-3xl tracking-tight text-ink-900 sm:text-4xl">
-            {WHO_IS_IT_FOR_CONTENT.title}
+            {HOME_WHO_IS_IT_FOR_CONTENT.title}
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-ink-700">
-            {WHO_IS_IT_FOR_CONTENT.description}
+            {HOME_WHO_IS_IT_FOR_CONTENT.description}
           </p>
         </motion.div>
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2">
-          {AUDIENCE_ITEMS.map((item, index) => (
+          {HOME_WHO_IS_IT_FOR_ITEMS.map((item, index) => (
             <motion.div
               key={item.id}
               initial="hidden"
